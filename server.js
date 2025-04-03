@@ -37,6 +37,7 @@ const VendaDia = sequelize.define('TBMOVTO_VENDA_DIA', {
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false,
   },
+<<<<<<< HEAD
   MVD_VALOR_APRAZO: {   
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false,
@@ -45,6 +46,8 @@ const VendaDia = sequelize.define('TBMOVTO_VENDA_DIA', {
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false,
   }
+=======
+>>>>>>> 56f6c63999e42101d1c0143d0e32e47135cf7fe8
 }, {
   tableName: 'TBMOVTO_VENDA_DIA',
   timestamps: false,
@@ -71,9 +74,13 @@ app.get('/vendas', async (req, res) => {
         [literal('CONVERT(VARCHAR, MVD_DIA, 120)'), 'MVD_DIA'],
         'MVD_QTE_VENDAS',
         'MVD_QTE_VENDIDA',
+<<<<<<< HEAD
         'MVD_VALOR_LIQUIDO',
         'MVD_VALOR_AVISTA',
         'MVD_VALOER_APRAZO'
+=======
+        'MVD_VALOR_LIQUIDO'
+>>>>>>> 56f6c63999e42101d1c0143d0e32e47135cf7fe8
       ],
       where: {
         MVD_DIA: {
