@@ -61,7 +61,6 @@ async function testConnection() {
   }
 }
 
-
 app.get('/vendas', async (req, res) => {
   try {
     const startDate = '2024-01-01'; 
@@ -90,12 +89,25 @@ app.get('/vendas', async (req, res) => {
   }
 });
 
+app.get('/receber', async (req, res) => {
+  try {
+    const [results] = await sequelize.query(`
+      SELECT DRC_VDUP FROM TBRECEBER
+`);
+    res.json(results);
+  } catch(error){
+    console.error('erro ao buscar a tabela', error);
+    res.status(500).json({error: 'Erro ao consultar o campo'});
+  }
+});
+
 async function startServer() {
   await testConnection();
   app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
   });
 }
+
 
 startServer().catch((error) => {
   console.error('Erro ao iniciar o servidor:', error);
