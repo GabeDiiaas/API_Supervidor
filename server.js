@@ -101,6 +101,18 @@ app.get('/receber', async (req, res) => {
   }
 });
 
+app.get('/pagar', async(req, res) => {
+  try {
+    const [pagar] = await sequelize.query(`
+      SELECT DRP_VPGT FROM TBRECEBERPA
+`);
+  res.json(pagar)
+  } catch (error) {
+    console.error('erro ao buscar a tabela pagar', error);
+    rest.status(500).json({error: 'erro ao buscar o campo pagar'})
+  }
+});
+
 async function startServer() {
   await testConnection();
   app.listen(port, () => {
