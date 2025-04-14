@@ -37,4 +37,3 @@ module.exports = (sequelize) => {
 
   return router;
 };
-module.exports = router;
