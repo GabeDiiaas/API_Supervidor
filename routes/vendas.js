@@ -3,7 +3,7 @@ const router = express.Router();
 const VendaDia = require('../models/VendaDia');
 const { Op, literal } = require('sequelize');
 
-router.get('/', async (req, res) => {
+router.get('/vendas-dia', async (req, res) => {
   try {
     const startDate = '2024-01-01';
     const vendas = await VendaDia.findAll({
@@ -22,3 +22,4 @@ router.get('/', async (req, res) => {
 });
 
 module.exports = router;
+
