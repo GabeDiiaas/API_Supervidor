@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 module.exports = (sequelize) => {
-  router.get('/', async (req, res) => {
+  router.get('/pagar-dia', async (req, res) => {
     try {
       const [results] = await sequelize.query(`SELECT DRP_VPGT FROM TBRECEBERPA`);
       res.json(results);
