@@ -1,7 +1,7 @@
 const { DataTypes, literal } = require('sequelize');
-const sequelize = require('../config/database');
+const { sequelizeUltraSyst } = require('../config/database');
 
-const VendaDia = sequelize.define('TBMOVTO_VENDA_DIA', {
+const VendaDia = sequelizeUltraSyst.define('TBMOVTO_VENDA_DIA', {
   MVD_DIA: DataTypes.INTEGER,
   MVD_QTE_VENDAS: DataTypes.INTEGER,
   MVD_QTE_VENDIDA: DataTypes.INTEGER,
